@@ -2,8 +2,6 @@ import React from "react";
 import BotCard from "../components/BotCard";
 
 class YourBotArmy extends React.Component {
-  //your bot army code here...
-
 
   renderBots = () => {
     let currentArmy = this.props.bots.filter(bot => {
@@ -14,7 +12,6 @@ class YourBotArmy extends React.Component {
       return <BotCard onBotClick={this.props.removeBot} key={bot.id} bot={bot} />
     })
   }
-  
 
   render(){
     return (
