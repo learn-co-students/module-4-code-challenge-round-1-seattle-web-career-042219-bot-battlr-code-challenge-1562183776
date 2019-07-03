@@ -18,6 +18,7 @@ class BotsPage extends React.Component {
   }
 
   handleBotClick = (bot) => {
+    console.log(bot)
     if(!this.state.yourBots.includes(bot)){
       this.setState({
         yourBots: [...this.state.yourBots, bot]
@@ -26,7 +27,7 @@ class BotsPage extends React.Component {
   }
 
   handleBotCollectionClick = (botObj) => {
-    const currentState = {...this.state.yourBots}
+    const currentState = [...this.state.yourBots]
     const newState = currentState.filter(bot => bot.id !== botObj.id)
     this.setState({
       yourBots: newState
