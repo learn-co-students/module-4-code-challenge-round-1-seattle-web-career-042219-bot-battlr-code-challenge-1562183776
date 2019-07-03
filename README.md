@@ -9,7 +9,7 @@ All of the code to style the page has been written for you, meaning that you sho
 
 ## What You Already Have
 
-`BotCard` and `BotSpecs` are presentational components that have been provided for you that will render out information about an individual bot formatted for a list view and for a full view, respectively. They are pre-styled, and it is your responsibility to get the data into them.
+`BotCard` is a presentational component that has been provided for you that will render out information about an individual bot formatted for a list view and for a full view, respectively. They are pre-styled, and it is your responsibility to get the data into them.
 
 `BotCollection` and `YourBotArmy` are container components. `BotCollection` is where all the bots will be displayed, while `YourBotArmy` (the green portion on the top of the screen) will only display the bots that have been selected by the user.
 
@@ -66,17 +66,6 @@ If you have gotten this far, you have hit the checkpoint. Your app should look l
 Before proceeding to the next part of the challenge, __be sure to stage a commit at this point__. That way if your code breaks or you do not get to finish the next feature, we will be able to see that you were able to get up to this point.
 
 
-#### 4. Refactor
-
-Now that you have some of the functionality of your app, it's time to refactor the code. Rather than enlisting the bot into the army, clicking on the card should instead display a show view (`BotSpecs`) for that bot, which should replace `BotsCollection`. BotSpecs should have two buttons: one to go back to the list view and another to enlist that bot.
-
-This refactored version should look like the following:
-
-![alt text][full_demo]
-
-[full_demo]: ./public/full_demo.gif "Full demo"
-
-
 #### BONUS
 
 If you have finished all of the above features before time is called, consider building out an extra feature. This could a sort, a filter, or a search. This deliverable is entirely optional, so do not feel pressure to meet this goal.
@@ -94,6 +83,6 @@ When time is called, please stop coding, push your code to your fork, and submit
 
 3. Component lifecycle - Are the right component lifecycle methods used? Are they used for the correct purposes?
 
-4. Rendering - Is information rendered in the correct locations? Were you able to conditionally render different components (i.e. `BotSpecs` and `BotCollection`)?
+4. Rendering - Is information rendered in the correct locations? Were you able to conditionally render different components?
 
 __Good Luck!__
