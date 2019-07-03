@@ -19,6 +19,8 @@ class BotsPage extends React.Component {
     }))
   }
 
+  //This removes it from the list of your bots if you try to add from the index
+  //Less lines of code and communicates to the user that cannot add it more than once
   handleAddBot = (bot) => {
       if(this.state.yourBots.includes(bot)) {
         console.log("remove me")
