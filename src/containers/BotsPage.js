@@ -19,8 +19,6 @@ class BotsPage extends React.Component {
     }))
   }
 
-  //This removes it from the list of your bots if you try to add from the index
-  //Less lines of code and communicates to the user that cannot add it more than once
   handleRemoveBot = (bot) => {
       if(this.state.yourBots.includes(bot)) {
         let newState = this.state.yourBots.filter(bbot => bbot.id !== bot.id)
@@ -42,11 +40,13 @@ class BotsPage extends React.Component {
       })
     }
   }
-
-
   render() {
+    //interestingly both the handleRemoveBot and handleAddFromIndex are the same function
+    //however they have two different functionalities dependent on whether it is clicked on
+    //index or the 'yourBots' section
     return (
       <div>
+        
         <YourBotArmy addBot={this.handleRemoveBot} bots={this.state.yourBots}/>
         <BotCollection addBot={this.handleAddFromIndex}collection={this.state.botCollection}/>
       </div>
