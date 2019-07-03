@@ -47,7 +47,7 @@ class BotsPage extends React.Component {
     return (
       <div>
         
-        <YourBotArmy addBot={this.handleRemoveBot} bots={this.state.yourBots}/>
+        <YourBotArmy removeBot={this.handleRemoveBot} bots={this.state.yourBots}/>
         <BotCollection addBot={this.handleAddFromIndex}collection={this.state.botCollection}/>
       </div>
     );
