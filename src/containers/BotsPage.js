@@ -21,7 +21,11 @@ class BotsPage extends React.Component {
 
   handleAddBot = (bot) => {
       if(this.state.yourBots.includes(bot)) {
-        return null
+        console.log("remove me")
+        let newState = this.state.yourBots.filter(bbot => bbot.id !== bot.id)
+        this.setState({
+          yourBots: newState
+        })
       } else {
         let newState = this.state.yourBots.concat(bot)
         this.setState({
@@ -34,7 +38,7 @@ class BotsPage extends React.Component {
   render() {
     return (
       <div>
-        <YourBotArmy bots={this.state.yourBots}/>
+        <YourBotArmy addBot={this.handleAddBot} bots={this.state.yourBots}/>
         <BotCollection addBot={this.handleAddBot}collection={this.state.botCollection}/>
       </div>
     );
