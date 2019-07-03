@@ -67,7 +67,7 @@ handleBotSelectList = (selectedBot) => {
     return (
       <div>
         <YourBotArmy bots={this.state.botsTeam} handleBotSelect={this.handleBotSelect}/>
-        <BotCollection handleBotSelectList={this.handleBotSelect} bots={this.state.bots}/>
+        <BotCollection handleBotSelect={this.handleBotSelectList} bots={this.state.bots}/>
       </div>
     );
   }
