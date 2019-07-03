@@ -26,7 +26,7 @@ fetchBots = () => {
   })
 }
 
-handleBotSelect = (selectedBot) => {
+handleBotSelectTeam = (selectedBot) => {
   if (selectedBot.isSelected) {
     selectedBot.isSelected = false
   } else {
@@ -66,7 +66,7 @@ handleBotSelectList = (selectedBot) => {
   render() {
     return (
       <div>
-        <YourBotArmy bots={this.state.botsTeam} handleBotSelect={this.handleBotSelect}/>
+        <YourBotArmy bots={this.state.botsTeam} handleBotSelect={this.handleBotSelectTeam}/>
         <BotCollection handleBotSelect={this.handleBotSelectList} bots={this.state.bots}/>
       </div>
     );
