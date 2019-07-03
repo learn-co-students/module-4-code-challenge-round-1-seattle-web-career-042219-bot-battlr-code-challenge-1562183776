@@ -4,13 +4,11 @@ const BotCard = props => {
   const { bot } = props;
 
  const handleClick = event => {
-   !props.armyDiv?
-    props.onBotClick(bot): null
+  
+    props.onBotClick(bot)
   }
 
-  const handleRemoveClick = event => {
-    props.onRemoveClick(bot)
-  }
+ 
 
   let botType;
 
@@ -33,7 +31,7 @@ const BotCard = props => {
       <div
         className="ui card"
         key={bot.id}
-        onClick={bot.inArmy? handleRemoveClick: handleClick}
+        onClick={handleClick}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />

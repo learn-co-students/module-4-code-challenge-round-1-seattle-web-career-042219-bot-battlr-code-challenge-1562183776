@@ -13,15 +13,16 @@ class BotsPage extends React.Component {
 
 
 addBot = bot => {
-  
-  // const editedBots = this.state.bots.filter((b =>{
-  //   return b.id !== bot.id
-  // }))
+
   bot.inArmy =!bot.inArmy
+  if (!bot.armyDiv){
   this.setState(prevState => ({
-    // bots: editedBots,
     botArmy: [...prevState.botArmy, bot]
   }), ()=> console.log(this.state.botArmy))
+  bot.armyDiv = true
+}else{
+  return null
+}
 }
 
 removeBot = bot => {
@@ -35,6 +36,7 @@ removeBot = bot => {
     botArmy: editedArmy
     // bots: addtobots
   }), ()=> console.log(this.state.botArmy))
+  bot.armyDiv = false
 }
 
 
@@ -53,7 +55,7 @@ loadBots = () => {
   render() {
     return (
       <div>
-        <YourBotArmy bots={this.state.botArmy} onRemoveClick={this.removeBot}/>
+        <YourBotArmy bots={this.state.botArmy} botsavailable={this.state.bots} onBotClick={this.removeBot}/>
         <BotCollection bots={this.state.bots} onBotClick={this.addBot} />
       </div>
     );
