@@ -25,14 +25,15 @@ addBot = bot => {
 }
 
 removeBot = bot => {
-  bot.inArmy = !bot.inArmy
-  console.log(bot, 'Remove has been hit')
+  bot.inArmy = !bot.inArmy;
+  const addtobots = [...this.state.bots, bot]
   const editedArmy = this.state.botArmy.filter((b =>{
     return b.id !== bot.id
-  }))
+  }));
+
   this.setState(prevState => ({
-    botArmy: editedArmy
- 
+    botArmy: editedArmy,
+    bots: addtobots
   }), ()=> console.log(this.state.botArmy))
 }
 
