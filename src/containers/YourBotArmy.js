@@ -2,7 +2,6 @@ import React from "react";
 import BotCard from "../components/BotCard";
 
 class YourBotArmy extends React.Component {
-  //your bot army code here...
 
   render(){
     return (
@@ -11,7 +10,7 @@ class YourBotArmy extends React.Component {
           <div className="row bot-army-row">
           Your Bot Army
             {this.props.bots.map((bot, index) => {
-              return <BotCard key={index} bot={bot} onRemoveClick={this.props.onRemoveClick}/>
+              return <BotCard key={index} bot={bot} onRemoveClick={this.props.onRemoveClick} bots={this.props.bots} armyDiv={true}/>
              })}
             
           </div>

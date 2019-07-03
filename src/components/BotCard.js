@@ -4,7 +4,8 @@ const BotCard = props => {
   const { bot } = props;
 
  const handleClick = event => {
-    props.onBotClick(bot)
+   !props.armyDiv?
+    props.onBotClick(bot): null
   }
 
   const handleRemoveClick = event => {

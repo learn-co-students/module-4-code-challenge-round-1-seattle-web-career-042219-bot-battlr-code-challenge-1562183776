@@ -14,26 +14,26 @@ class BotsPage extends React.Component {
 
 addBot = bot => {
   
-  const editedBots = this.state.bots.filter((b =>{
-    return b.id !== bot.id
-  }))
+  // const editedBots = this.state.bots.filter((b =>{
+  //   return b.id !== bot.id
+  // }))
   bot.inArmy =!bot.inArmy
   this.setState(prevState => ({
-    bots: editedBots,
+    // bots: editedBots,
     botArmy: [...prevState.botArmy, bot]
   }), ()=> console.log(this.state.botArmy))
 }
 
 removeBot = bot => {
   bot.inArmy = !bot.inArmy;
-  const addtobots = [...this.state.bots, bot]
+  // const addtobots = [...this.state.bots, bot]
   const editedArmy = this.state.botArmy.filter((b =>{
     return b.id !== bot.id
   }));
 
   this.setState(prevState => ({
-    botArmy: editedArmy,
-    bots: addtobots
+    botArmy: editedArmy
+    // bots: addtobots
   }), ()=> console.log(this.state.botArmy))
 }
 
@@ -54,7 +54,7 @@ loadBots = () => {
     return (
       <div>
         <YourBotArmy bots={this.state.botArmy} onRemoveClick={this.removeBot}/>
-        <BotCollection bots={this.state.bots} onBotClick={this.addBot}/>
+        <BotCollection bots={this.state.bots} onBotClick={this.addBot} />
       </div>
     );
   }
