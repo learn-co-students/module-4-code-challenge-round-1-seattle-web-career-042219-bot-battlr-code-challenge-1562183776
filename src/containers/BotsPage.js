@@ -1,6 +1,7 @@
 import React from "react";
 import BotCollection from "./BotCollection"
-import YourBotArmy from "./YourBotArmy";
+import YourBotArmy from "./YourBotArmy"
+import FilterType from "../components/FilterType"
 
 const BOT_URL= "https://bot-battler-api.herokuapp.com/api/v1/bots"
 
@@ -9,7 +10,8 @@ class BotsPage extends React.Component {
 
   state = {
     bots: [],
-    botsTeam: []
+    botsTeam: [],
+    filtered: []
   }
 
 componentDidMount() {
@@ -60,12 +62,24 @@ handleBotSelectList = (selectedBot) => {
       return
     }
 }
+
+handleSubmit = (string) => {
+  if (string === ""){
+    this.fetchBots()
+  } else {
+    let newArray = this.state.bots.filter(bot => bot.bot_class === string)
+    this.setState({
+      bots: newArray
+    })
+  }
+}
   
 
 
   render() {
     return (
       <div>
+        <FilterType handleSubmit = {this.handleSubmit}/>
         <YourBotArmy bots={this.state.botsTeam} handleBotSelect={this.handleBotSelectTeam}/>
         <BotCollection handleBotSelect={this.handleBotSelectList} bots={this.state.bots}/>
       </div>
